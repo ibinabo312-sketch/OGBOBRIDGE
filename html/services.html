@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OgboBridge - Our Services</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Progress Line -->
+    <div class="ogbobridge-progress-line" id="services-progress-line"></div>
+
+    <!-- Header -->
+    <header class="ogbobridge-header">
+        <div class="ogbobridge-logo">OgboBridge</div>
+
+        <nav class="ogbobridge-nav" id="services-main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="ogbobridge-active">Services</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+
+        <div class="ogbobridge-header-right">
+            <a href="contact.html" class="ogbobridge-contact-btn" data-i18n="nav.contact">Contact Us</a>
+            <div class="ogbobridge-language-switcher">
+                <button class="ogbobridge-language-btn" id="services-language-toggle">
+                    <i class="fas fa-globe"></i>
+                    <span id="services-current-language">EN</span>
+                </button>
+                <div class="ogbobridge-language-dropdown" id="services-language-dropdown">
+                    <div class="ogbobridge-language-option ogbobridge-active" data-lang="en">
+                        <i class="flag-icon">🇺🇸</i> English
+                    </div>
+                    <div class="ogbobridge-language-option" data-lang="de">
+                        <i class="flag-icon">🇩🇪</i> Deutsch
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="ogbobridge-mobile-menu-btn" id="services-mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="ogbobridge-mobile-bottom-nav">
+        <a href="index.html" class="ogbobridge-mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span data-i18n="nav.home">Home</span>
+        </a>
+        <a href="services.html" class="ogbobridge-mobile-nav-item ogbobridge-active">
+            <i class="fas fa-cogs"></i>
+            <span data-i18n="nav.services">Services</span>
+        </a>
+        <a href="about.html" class="ogbobridge-mobile-nav-item">
+            <i class="fas fa-info-circle"></i>
+            <span data-i18n="nav.about">About</span>
+        </a>
+        </a>
+        <div class="ogbobridge-mobile-language-switcher">
+            <button class="ogbobridge-mobile-language-btn" id="services-mobile-language-toggle">
+                <i class="fas fa-globe"></i>
+                <span id="services-mobile-current-language">EN</span>
+            </button>
+            <div class="ogbobridge-mobile-language-dropdown" id="services-mobile-language-dropdown">
+                <div class="ogbobridge-mobile-language-option ogbobridge-active" data-lang="en">
+                    <i class="flag-icon">🇺🇸</i> English
+                </div>
+                <div class="ogbobridge-mobile-language-option" data-lang="de">
+                    <i class="flag-icon">🇩🇪</i> Deutsch
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Hero Section with Background Image -->
+    <section class="services-hero">
+        <div class="services-hero-content">
+            <h1 data-i18n-html="services.hero.title">Our <span class="highlight">Services</span></h1>
+            <p data-i18n="services.hero.subtitle">Strategic IT solutions that connect German businesses with exceptional West African tech talent, delivering quality, efficiency, and cultural alignment.</p>
+            <a href="#services-overview" class="services-hero-cta" data-i18n="services.hero.cta">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- Enhanced Services Overview Section -->
+    <section class="services-overview" id="services-overview">
+        <div class="services-container">
+            <div class="services-section-header">
+                <h2 data-i18n="services.title">Our Services</h2>
+                <p data-i18n="services.subtitle">Strategic IT solutions that connect German businesses with exceptional West African tech talent, delivering quality, efficiency, and cultural alignment</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Talent Placement Service Card -->
+                <div class="service-card services-scroll-animate">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 data-i18n="services.talent.title">Talent Placement</h3>
+                    <p data-i18n="services.talent.desc">Access pre-vetted, high-performing IT professionals from West Africa's growing tech ecosystem, matched to your specific needs and company culture.</p>
+                    <ul class="service-features">
+                        <li data-i18n="services.talent.feature1">Precision skill matching</li>
+                        <li data-i18n="services.talent.feature2">Cultural & team fit evaluation</li>
+                        <li data-i18n="services.talent.feature3">Comprehensive technical vetting</li>
+                    </ul>
+                    <a href="#talent-detail" class="service-link" data-i18n="services.learn">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Project Management Service Card -->
+                <div class="service-card services-scroll-animate services-delay-1">
+                    <div class="service-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 data-i18n="services.project.title">Project Management</h3>
+                    <p data-i18n="services.project.desc">German-led oversight ensures project success with agile methodologies, clear communication, and cultural bridge management.</p>
+                    <ul class="service-features">
+                        <li data-i18n="services.project.feature1">Agile & hybrid methodologies</li>
+                        <li data-i18n="services.project.feature2">Cross-cultural coordination</li>
+                        <li data-i18n="services.project.feature3">Real-time progress tracking</li>
+                    </ul>
+                    <a href="#project-detail" class="service-link" data-i18n="services.learn">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Quality Screening Service Card -->
+                <div class="service-card services-scroll-animate services-delay-2">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 data-i18n="services.quality.title">Quality Screening</h3>
+                    <p data-i18n="services.quality.desc">Rigorous multi-stage assessment process ensures only the top 5% of talent with verified technical and soft skills.</p>
+                    <ul class="service-features">
+                        <li data-i18n="services.quality.feature1">Multi-stage technical evaluation</li>
+                        <li data-i18n="services.quality.feature2">Portfolio & code quality review</li>
+                        <li data-i18n="services.quality.feature3">Professional background verification</li>
+                    </ul>
+                    <a href="#quality-detail" class="service-link" data-i18n="services.learn">Learn more <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Service Detail Section -->
+    <section class="service-detail-section">
+        <div class="services-container">
+            <!-- Talent Placement Service Detail -->
+            <div class="service-detail services-scroll-animate" id="talent-detail">
+                <div class="service-detail-header">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h2 data-i18n="services.talent.title">Talent Placement</h2>
+                    <p data-i18n="services.talent.subtitle">Connecting German businesses with pre-vetted, high-performing IT professionals from West Africa's growing tech ecosystem</p>
+                </div>
+                
+                <div class="service-detail-content">
+                    <div class="service-features-grid">
+                        <div class="feature-item services-scroll-animate">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3 data-i18n="services.talent.feature1.title">Precision Skill Matching</h3>
+                                <p data-i18n="services.talent.feature1.desc">Our AI-powered matching algorithm analyzes your specific technical requirements and team dynamics to identify candidates with the perfect skill combination for your projects.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item services-scroll-animate services-delay-1">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3 data-i18n="services.talent.feature2.title">Cultural & Team Fit Evaluation</h3>
+                                <p data-i18n="services.talent.feature2.desc">Our intercultural experts assess communication styles, work preferences, and team compatibility to ensure seamless integration with your existing teams.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item services-scroll-animate services-delay-2">
+                            <div class="feature-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3 data-i18n="services.talent.feature3.title">Comprehensive Technical Vetting</h3>
+                                <p data-i18n="services.talent.feature3.desc">Multi-layered technical evaluation including live coding sessions, architectural challenges, and real-world problem-solving scenarios to validate expertise.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-process">
+                        <h3 data-i18n="services.process.title">Our Talent Placement Process</h3>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4 data-i18n="services.talent.step1.title">Deep Requirement Analysis</h4>
+                                    <p data-i18n="services.talent.step1.desc">We conduct comprehensive interviews to understand your technical needs, team culture, and project objectives</p>
+                                </div>
+                            </div>
+                            
+                            <div class="process-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4 data-i18n="services.talent.step2.title">Intelligent Candidate Screening</h4>
+                                    <p data-i18n="services.talent.step2.desc">Our technical team performs rigorous technical assessments and cultural compatibility evaluations</p>
+                                </div>
+                            </div>
+                            
+                            <div class="process-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4 data-i18n="services.talent.step3.title">Seamless Interview Coordination</h4>
+                                    <p data-i18n="services.talent.step3.desc">We manage the entire interview process and provide detailed candidate profiles with performance metrics</p>
+                                </div>
+                            </div>
+                            
+                            <div class="process-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4 data-i18n="services.talent.step4.title">Comprehensive Onboarding Support</h4>
+                                    <p data-i18n="services.talent.step4.desc">We facilitate smooth integration and provide continuous support during the initial project phases</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Management Service Detail -->
+            <div class="service-detail services-scroll-animate" id="project-detail">
+                <div class="service-detail-header">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h2 data-i18n="services.project.title">Project Management</h2>
+                    <p data-i18n="services.project.subtitle">German-led project management ensuring seamless integration, clear communication, and successful delivery</p>
+                </div>
+                
+                <div class="service-detail-content">
+                    <div class="service-features-grid">
+                        <div class="feature-item services-scroll-animate">
+                            <div class="feature-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3 data-i18n="services.project.feature1.title">Agile & Hybrid Methodologies</h3>
+                                <p data-i18n="services.project.feature1.desc">We implement Scrum, Kanban, and hybrid approaches tailored to your project needs, ensuring flexibility, transparency, and continuous value delivery.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item services-scroll-animate services-delay-1">
+                            <div class="feature-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3 data-i18n="services.project.feature2.title">Cross-Cultural Coordination</h3>
+                                <p data-i18n="services.project.feature2.desc">Our German project managers bridge communication gaps, manage expectations, and ensure alignment between your team and our West African talent.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item services-scroll-animate services-delay-2">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3 data-i18n="services.project.feature3.title">Real-Time Performance Monitoring</h3>
+                                <p data-i18n="services.project.feature3.desc">Comprehensive tracking, detailed reporting, and proactive risk management to ensure projects stay on track and meet quality standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-section">
+                        <h3 data-i18n="services.tech.title">Technologies We Manage</h3>
+                        <div class="tech-grid">
+                            <div class="tech-category">
+                                <h4 data-i18n="services.tech.frontend">Frontend</h4>
+                                <div class="tech-tags">
+                                    <span>React</span>
+                                    <span>Vue.js</span>
+                                    <span>Angular</span>
+                                    <span>TypeScript</span>
+                                    <span>Svelte</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-category">
+                                <h4 data-i18n="services.tech.backend">Backend</h4>
+                                <div class="tech-tags">
+                                    <span>Node.js</span>
+                                    <span>Python</span>
+                                    <span>Java</span>
+                                    <span>.NET</span>
+                                    <span>Go</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-category">
+                                <h4 data-i18n="services.tech.mobile">Mobile</h4>
+                                <div class="tech-tags">
+                                    <span>React Native</span>
+                                    <span>Flutter</span>
+                                    <span>iOS</span>
+                                    <span>Android</span>
+                                    <span>Kotlin</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-category">
+                                <h4 data-i18n="services.tech.cloud">Cloud & DevOps</h4>
+                                <div class="tech-tags">
+                                    <span>AWS</span>
+                                    <span>Azure</span>
+                                    <span>Docker</span>
+                                    <span>Kubernetes</span>
+                                    <span>Terraform</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quality Screening Service Detail -->
+            <div class="service-detail services-scroll-animate" id="quality-detail">
+                <div class="service-detail-header">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h2 data-i18n="services.quality.title">Quality Screening</h2>
+                    <p data-i18n="services.quality.subtitle">Rigorous multi-stage assessment ensuring only top-tier talent with verified technical and soft skills</p>
+                </div>
+                
+                <div class="service-detail-content">
+                    <div class="service-features-grid">
+                        <div class="feature-item services-scroll-animate">
+                            <div class="feature-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3 data-i18n="services.quality.feature1.title">Multi-Stage Technical Evaluation</h3>
+                                <p data-i18n="services.quality.feature1.desc">Comprehensive technical assessments including algorithmic challenges, system design exercises, and practical coding tasks that simulate real-world scenarios.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item services-scroll-animate services-delay-1">
+                            <div class="feature-icon">
+                                <i class="fas fa-folder-open"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3 data-i18n="services.quality.feature2.title">Portfolio & Code Quality Review</h3>
+                                <p data-i18n="services.quality.feature2.desc">In-depth analysis of previous work, coding standards, documentation practices, and problem-solving approaches to assess real-world capabilities.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item services-scroll-animate services-delay-2">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3 data-i18n="services.quality.feature3.title">Professional Background Verification</h3>
+                                <p data-i18n="services.quality.feature3.desc">Thorough verification of credentials, employment history, professional references, and soft skills to ensure reliability and professionalism.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="metrics-section">
+                        <h3 data-i18n="services.metrics.title">Our Quality Metrics</h3>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <div class="metric-value">98%</div>
+                                <div class="metric-label" data-i18n="services.metrics.success">Client Satisfaction Rate</div>
+                            </div>
+                            
+                            <div class="metric">
+                                <div class="metric-value">2%</div>
+                                <div class="metric-label" data-i18n="services.metrics.attrition">Candidate Attrition Rate</div>
+                            </div>
+                            
+                            <div class="metric">
+                                <div class="metric-value">24h</div>
+                                <div class="metric-label" data-i18n="services.metrics.response">Average Response Time</div>
+                            </div>
+                            
+                            <div class="metric">
+                                <div class="metric-value">100+</div>
+                                <div class="metric-label" data-i18n="services.metrics.talent">Vetted Talents</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced CTA Section -->
+    <section class="services-cta">
+        <div class="cta-container">
+            <div class="cta-content services-scroll-animate">
+                <h2 data-i18n="services.cta.title">Ready to Build Your Bridge?</h2>
+                <p data-i18n="services.cta.subtitle">Connect with top-tier West African IT talent and experience German-quality project management.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="cta-button-primary" data-i18n="services.cta.primary">Start Your Project</a>
+                    <a href="about.html" class="cta-button-secondary" data-i18n="services.cta.secondary">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Footer -->
+    <footer class="ogbobridge-footer">
+        <div class="ogbobridge-footer-container">
+            <div class="ogbobridge-footer-top">
+                <div class="ogbobridge-footer-column">
+                    <div class="ogbobridge-footer-logo">OgboBridge</div>
+                    <p class="ogbobridge-footer-description" data-i18n="footer.description">Connecting German businesses with West African IT talent through reliable, scalable solutions.</p>
+                    <div class="ogbobridge-footer-social">
+                        <a href="#" aria-label="LinkedIn" class="ogbobridge-social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="ogbobridge-social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="GitHub" class="ogbobridge-social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="ogbobridge-social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="ogbobridge-footer-column">
+                    <h4 data-i18n="footer.services">Services</h4>
+                    <ul class="ogbobridge-footer-links">
+                        <li><a href="#talent-detail" data-i18n="services.talent.title">Talent Placement</a></li>
+                        <li><a href="#project-detail" data-i18n="services.project.title">Project Management</a></li>
+                        <li><a href="#quality-detail" data-i18n="services.quality.title">Quality Screening</a></li>
+                        <li><a href="#services-overview" data-i18n="footer.allServices">All Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="ogbobridge-footer-column">
+                    <h4 data-i18n="footer.company">Company</h4>
+                    <ul class="ogbobridge-footer-links">
+                        <li><a href="about.html" data-i18n="footer.about">About Us</a></li>
+                        <li><a href="#" data-i18n="footer.careers">Careers</a></li>
+                        <li><a href="news.html" data-i18n="footer.news">News & Insights</a></li>
+                        <li><a href="contact.html" data-i18n="footer.contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="ogbobridge-footer-column">
+                    <h4 data-i18n="footer.legal">Legal</h4>
+                    <ul class="ogbobridge-footer-links">
+                        <li><a href="#" data-i18n="footer.privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-i18n="footer.terms">Terms of Service</a></li>
+                        <li><a href="#" data-i18n="footer.cookies">Cookie Policy</a></li>
+                        <li><a href="#" data-i18n="footer.imprint">Imprint</a></li>
+                    </ul>
+                </div>
+                
+                <div class="ogbobridge-footer-column">
+                    <h4 data-i18n="footer.newsletter">Stay Updated</h4>
+                    <p class="ogbobridge-newsletter-description" data-i18n="footer.newsletterDesc">Get the latest insights on IT talent and business opportunities.</p>
+                    <form class="ogbobridge-newsletter-form">
+                        <div class="ogbobridge-input-group">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="ogbobridge-newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="ogbobridge-footer-divider"></div>
+            
+            <div class="ogbobridge-footer-bottom">
+                <div class="ogbobridge-footer-bottom-left">
+                    <p class="ogbobridge-copyright" data-i18n="footer.copyright">&copy; 2023 OgboBridge. All rights reserved.</p>
+                </div>
+                <div class="ogbobridge-footer-bottom-right">
+                    <div class="ogbobridge-footer-legal-links">
+                        <a href="#" data-i18n="footer.accessibility">Accessibility</a>
+                        <span class="ogbobridge-separator">|</span>
+                        <a href="#" data-i18n="footer.sitemap">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+  
+</body>
+</html>

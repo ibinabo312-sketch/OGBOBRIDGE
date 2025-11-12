@@ -1,5 +1,4 @@
-
-      /* CSS Variables for consistent styling */
+   /* CSS Variables for consistent styling */
         :root {
             --ogbobridge-bg-color: #ffffff;
             --ogbobridge-text-color: #222;
@@ -3103,7 +3102,7 @@
             }
         }
 
-/* ========== ABOUT PAGE STYLES WITH UNIQUE CLASS NAMES ========== */
+/* ========== ABOUT PAGE STYLING ========== */
 
 /* About Page Progress Line */
 .ogbobridge-about-progress-line {
@@ -4211,9 +4210,9 @@
     }
 }
 
-/* ========== OGBCONTACT PAGE STYLES ========== */
+/* ========== OGBOCONTACT PAGE STYLES ========== */
 
-/* Professional Contact Hero Section */
+/* Contact Hero Section */
 .ogbocontact-hero {
     padding: 140px 5% 80px;
     background-color: var(--ogbobridge-section-bg);

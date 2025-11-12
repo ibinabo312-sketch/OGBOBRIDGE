@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | OgboBridge - Connecting Talent with Opportunity</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Progress Line -->
-    <div class="ogbobridge-progress-line" id="ogbobridge-progressLine"></div>
-
-    <!-- Header -->
+      <!-- Header -->
     <header class="ogbobridge-header">
         <div class="ogbobridge-logo">OgboBridge</div>
 
@@ -25,21 +22,7 @@
         </nav>
 
         <div class="ogbobridge-header-right">
-            <a href="#ogbocontact-form" class="ogbobridge-contact-btn">Get In Touch</a>
-            <div class="ogbobridge-language-switcher">
-                <button class="ogbobridge-language-btn" id="ogbobridge-languageToggle">
-                    <i class="fas fa-globe"></i>
-                    <span id="ogbobridge-currentLanguage">EN</span>
-                </button>
-                <div class="ogbobridge-language-dropdown" id="ogbobridge-languageDropdown">
-                    <div class="ogbobridge-language-option ogbobridge-active" data-lang="en">
-                        <i class="flag-icon">🇺🇸</i> English
-                    </div>
-                    <div class="ogbobridge-language-option" data-lang="de">
-                        <i class="flag-icon">🇩🇪</i> Deutsch
-                    </div>
-                </div>
-            </div>
+            <a href="contact.html" class="ogbobridge-contact-btn">Contact Us</a>
         </div>
 
         <button class="ogbobridge-mobile-menu-btn" id="ogbobridge-mobileMenuBtn">
@@ -49,17 +32,17 @@
 
     <!-- Mobile Bottom Navigation -->
     <div class="ogbobridge-mobile-bottom-nav">
-        <a href="index.html" class="ogbobridge-mobile-nav-item">
+        <a href="index.html" class="ogbobridge-mobile-nav-item ogbobridge-active">
             <i class="fas fa-home"></i>
-            <span data-i18n="nav.home">Home</span>
+            <span>Home</span>
         </a>
         <a href="services.html" class="ogbobridge-mobile-nav-item">
             <i class="fas fa-cogs"></i>
-            <span data-i18n="nav.services">Services</span>
+            <span>Services</span>
         </a>
         <a href="about.html" class="ogbobridge-mobile-nav-item">
             <i class="fas fa-info-circle"></i>
-            <span data-i18n="nav.about">About</span>
+            <span>About</span>
         </a>
     </div>
 
@@ -331,6 +314,6 @@
         </div>
     </footer>
 
-    <script src="../js/script.js"></script>
+    <script src="src/main.js"></script>
 </body>
 </html>

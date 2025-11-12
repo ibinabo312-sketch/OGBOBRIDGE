@@ -4,78 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OgboBridge - Our Services</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Progress Line -->
-    <div class="ogbobridge-progress-line" id="services-progress-line"></div>
-
     <!-- Header -->
     <header class="ogbobridge-header">
         <div class="ogbobridge-logo">OgboBridge</div>
 
-        <nav class="ogbobridge-nav" id="services-main-nav">
+        <nav class="ogbobridge-nav" id="ogbobridge-mainNav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html" class="ogbobridge-active">Services</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </nav>
 
         <div class="ogbobridge-header-right">
-            <a href="contact.html" class="ogbobridge-contact-btn" data-i18n="nav.contact">Contact Us</a>
-            <div class="ogbobridge-language-switcher">
-                <button class="ogbobridge-language-btn" id="services-language-toggle">
-                    <i class="fas fa-globe"></i>
-                    <span id="services-current-language">EN</span>
-                </button>
-                <div class="ogbobridge-language-dropdown" id="services-language-dropdown">
-                    <div class="ogbobridge-language-option ogbobridge-active" data-lang="en">
-                        <i class="flag-icon">🇺🇸</i> English
-                    </div>
-                    <div class="ogbobridge-language-option" data-lang="de">
-                        <i class="flag-icon">🇩🇪</i> Deutsch
-                    </div>
-                </div>
-            </div>
+            <a href="contact.html" class="ogbobridge-contact-btn">Contact Us</a>
         </div>
 
-        <button class="ogbobridge-mobile-menu-btn" id="services-mobile-menu-btn">
+        <button class="ogbobridge-mobile-menu-btn" id="ogbobridge-mobileMenuBtn">
             <i class="fas fa-bars"></i>
         </button>
     </header>
 
     <!-- Mobile Bottom Navigation -->
     <div class="ogbobridge-mobile-bottom-nav">
-        <a href="index.html" class="ogbobridge-mobile-nav-item">
+        <a href="index.html" class="ogbobridge-mobile-nav-item ogbobridge-active">
             <i class="fas fa-home"></i>
-            <span data-i18n="nav.home">Home</span>
+            <span>Home</span>
         </a>
-        <a href="services.html" class="ogbobridge-mobile-nav-item ogbobridge-active">
+        <a href="services.html" class="ogbobridge-mobile-nav-item">
             <i class="fas fa-cogs"></i>
-            <span data-i18n="nav.services">Services</span>
+            <span>Services</span>
         </a>
         <a href="about.html" class="ogbobridge-mobile-nav-item">
             <i class="fas fa-info-circle"></i>
-            <span data-i18n="nav.about">About</span>
+            <span>About</span>
         </a>
-        </a>
-        <div class="ogbobridge-mobile-language-switcher">
-            <button class="ogbobridge-mobile-language-btn" id="services-mobile-language-toggle">
-                <i class="fas fa-globe"></i>
-                <span id="services-mobile-current-language">EN</span>
-            </button>
-            <div class="ogbobridge-mobile-language-dropdown" id="services-mobile-language-dropdown">
-                <div class="ogbobridge-mobile-language-option ogbobridge-active" data-lang="en">
-                    <i class="flag-icon">🇺🇸</i> English
-                </div>
-                <div class="ogbobridge-mobile-language-option" data-lang="de">
-                    <i class="flag-icon">🇩🇪</i> Deutsch
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Services Hero Section-->
@@ -492,7 +460,8 @@
         </div>
     </footer>
 
-    <script src="../js/script.js"></script>
+   <script src="src/main.js"></script>
+
   
 </body>
 

@@ -1,6 +1,7 @@
 // Universal OgboBridge App - Works on all pages without modules
 class UniversalOgboBridgeApp {
     constructor() {
+        this.currentLang = this.getStoredLanguage();
         this.init();
     }
     
@@ -9,6 +10,7 @@ class UniversalOgboBridgeApp {
         
         // Initialize all core functionality
         this.initializeMobileNavigation();
+        this.initializeLanguageSwitcher();
         this.initializeSmoothScrolling();
         this.initializeScrollAnimations();
         this.initializeReadMoreButtons();
@@ -16,10 +18,30 @@ class UniversalOgboBridgeApp {
         this.initializeForms();
         this.initializeHorizontalScrolling();
         
+        // Apply current language
+        this.applyLanguage(this.currentLang);
+        
         // Mark as loaded
         document.body.classList.add('ogbobridge-loaded');
         
         console.log('Universal OgboBridge App Initialized');
+    }
+    
+    // Utility functions
+    getStoredLanguage() {
+        try {
+            return localStorage.getItem('ogbobridge_language') || 'en';
+        } catch (e) {
+            return 'en';
+        }
+    }
+    
+    setStoredLanguage(lang) {
+        try {
+            localStorage.setItem('ogbobridge_language', lang);
+        } catch (e) {
+            console.warn('Cannot save language preference');
+        }
     }
     
     // Mobile Navigation
@@ -73,6 +95,87 @@ class UniversalOgboBridgeApp {
         });
     }
     
+    // Language Switcher
+    initializeLanguageSwitcher() {
+        // Desktop language toggle
+        const desktopToggle = document.getElementById('ogbobridge-languageToggle');
+        const desktopDropdown = document.getElementById('ogbobridge-languageDropdown');
+        
+        if (desktopToggle && desktopDropdown) {
+            desktopToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                desktopDropdown.classList.toggle('ogbobridge-active');
+            });
+        }
+        
+        // Mobile language toggle
+        const mobileToggle = document.getElementById('ogbobridge-mobileLanguageToggle');
+        const mobileDropdown = document.getElementById('ogbobridge-mobileLanguageDropdown');
+        
+        if (mobileToggle && mobileDropdown) {
+            mobileToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileDropdown.classList.toggle('ogbobridge-active');
+            });
+        }
+        
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            [desktopDropdown, mobileDropdown].forEach(dropdown => {
+                if (dropdown) dropdown.classList.remove('ogbobridge-active');
+            });
+        });
+        
+        // Language options
+        document.querySelectorAll('.ogbobridge-language-option, .ogbobridge-mobile-language-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const lang = option.getAttribute('data-lang');
+                if (lang) {
+                    this.applyLanguage(lang);
+                }
+                
+                [desktopDropdown, mobileDropdown].forEach(dropdown => {
+                    if (dropdown) dropdown.classList.remove('ogbobridge-active');
+                });
+            });
+        });
+    }
+    
+    // Language Management
+    applyLanguage(lang) {
+        this.currentLang = lang;
+        this.setStoredLanguage(lang);
+        
+        // Update language displays
+        document.querySelectorAll('#ogbobridge-currentLanguage, #ogbobridge-mobileCurrentLanguage').forEach(display => {
+            if (display) display.textContent = lang.toUpperCase();
+        });
+        
+        // Update active states
+        document.querySelectorAll('.ogbobridge-language-option, .ogbobridge-mobile-language-option').forEach(option => {
+            const optionLang = option.getAttribute('data-lang');
+            if (optionLang === lang) {
+                option.classList.add('ogbobridge-active');
+            } else {
+                option.classList.remove('ogbobridge-active');
+            }
+        });
+        
+        // Update HTML attribute
+        document.documentElement.lang = lang;
+        
+        // Update read more buttons text
+        this.updateReadMoreButtonsText();
+        
+        // Dispatch event for other components
+        window.dispatchEvent(new CustomEvent('languageChanged', {
+            detail: { language: lang }
+        }));
+    }
+    
     // Smooth Scrolling
     initializeSmoothScrolling() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -114,28 +217,17 @@ class UniversalOgboBridgeApp {
             observer.observe(el);
         });
         
-        // Progress line - stops before footer
+        // Progress line
         const progressLine = document.getElementById('ogbobridge-progressLine');
-        const footer = document.querySelector('.ogbobridge-footer');
-        
-        if (progressLine && footer) {
+        if (progressLine) {
             window.addEventListener('scroll', () => {
                 const scrollPosition = window.scrollY;
                 const windowHeight = window.innerHeight;
                 const documentHeight = document.documentElement.scrollHeight;
-                const footerTop = footer.offsetTop;
+                const scrollPercent = (scrollPosition / (documentHeight - windowHeight)) * 100;
                 
-                // Calculate scroll percentage, but stop before footer
-                const maxScroll = footerTop - windowHeight;
-                const scrollPercent = (scrollPosition / maxScroll) * 100;
-                
-                // Only show progress line if we haven't reached the footer
-                if (scrollPosition < maxScroll) {
-                    progressLine.style.height = `${Math.min(100, scrollPercent)}%`;
-                    progressLine.style.opacity = '1';
-                } else {
-                    progressLine.style.opacity = '0';
-                }
+                progressLine.style.height = `${Math.min(100, scrollPercent)}%`;
+                progressLine.style.opacity = scrollPercent > 95 ? '0' : '1';
             });
         }
         
@@ -183,19 +275,34 @@ class UniversalOgboBridgeApp {
                 const textContainer = this.previousElementSibling;
                 
                 if (textContainer && textContainer.classList.contains('ogbobridge-story-text')) {
-                    // Toggle the expanded class
                     textContainer.classList.toggle('ogbobridge-expanded');
                     this.classList.toggle('ogbobridge-expanded');
                     
                     // Update button text
                     const isExpanded = textContainer.classList.contains('ogbobridge-expanded');
-                    if (isExpanded) {
-                        this.innerHTML = '<i class="fas fa-chevron-up"></i> Read Less';
-                    } else {
-                        this.innerHTML = '<i class="fas fa-chevron-down"></i> Read More';
-                    }
+                    const readMoreText = this.currentLang === 'en' ? 'Read More' : 'Mehr lesen';
+                    const readLessText = this.currentLang === 'en' ? 'Read Less' : 'Weniger lesen';
+                    
+                    this.innerHTML = isExpanded ? 
+                        `${readLessText} <i class="fas fa-chevron-up"></i>` : 
+                        `${readMoreText} <i class="fas fa-chevron-down"></i>`;
                 }
             });
+        });
+    }
+    
+    updateReadMoreButtonsText() {
+        document.querySelectorAll('.ogbobridge-read-more').forEach(button => {
+            const textContainer = button.previousElementSibling;
+            if (textContainer && textContainer.classList.contains('ogbobridge-story-text')) {
+                const isExpanded = textContainer.classList.contains('ogbobridge-expanded');
+                const readMoreText = this.currentLang === 'en' ? 'Read More' : 'Mehr lesen';
+                const readLessText = this.currentLang === 'en' ? 'Read Less' : 'Weniger lesen';
+                
+                button.innerHTML = isExpanded ? 
+                    `${readLessText} <i class="fas fa-chevron-up"></i>` : 
+                    `${readMoreText} <i class="fas fa-chevron-down"></i>`;
+            }
         });
     }
     
@@ -272,7 +379,7 @@ class UniversalOgboBridgeApp {
                 errorMessage.style.color = '#ff4757';
                 errorMessage.style.fontSize = '12px';
                 errorMessage.style.marginTop = '5px';
-                errorMessage.textContent = 'This field is required';
+                errorMessage.textContent = this.currentLang === 'en' ? 'This field is required' : 'Dieses Feld ist erforderlich';
                 input.parentNode.appendChild(errorMessage);
             }
         });
@@ -300,7 +407,9 @@ class UniversalOgboBridgeApp {
                     animation: fadeIn 0.5s ease;
                 `;
                 
-                successMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+                successMessage.textContent = this.currentLang === 'en' 
+                    ? 'Thank you for your message! We will get back to you soon.' 
+                    : 'Vielen Dank für Ihre Nachricht! Wir werden uns bald bei Ihnen melden.';
                 
                 form.appendChild(successMessage);
                 
